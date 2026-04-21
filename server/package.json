@@ -1,7 +1,7 @@
 {
-  "name": "job-matcher-server",
+  "name": "aptitude-server",
   "version": "1.0.0",
-  "description": "AI-Based Job Matching & Skill Gap Analyzer - Backend",
+  "description": "Aptitude - AI-Powered Resume Analyzer & Career Intelligence - Backend",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
