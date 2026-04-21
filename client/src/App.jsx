@@ -1,14 +1,13 @@
 import { useEffect, useState } from 'react';
-import './App.css';
-import Header from './components/Header';
-import ResumeInput from './components/ResumeInput';
-import ResultsSection from './components/ResultsSection';
+import LandingPage from './pages/LandingPage';
+import Dashboard from './dashboard/Dashboard';
 import AuthScreen from './components/AuthScreen';
+import './App.css';
 
 const API_URL = 'http://localhost:5000/api/analyze';
 const AUTH_STORAGE_KEY = 'jobmatch.auth';
 
-function App() {
+export default function App() {
   const [auth, setAuth] = useState(null);
   const [results, setResults] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -39,7 +38,6 @@ function App() {
   const handleAnalyze = async (resumeText) => {
     setIsLoading(true);
     setError(null);
-    setResults(null);
 
     try {
       const response = await fetch(API_URL, {
@@ -73,37 +71,37 @@ function App() {
     return <AuthScreen onAuth={handleAuth} />;
   }
 
+  const userBar = (
+    <div className="user-bar">
+      <span>
+        Signed in as <span className="user-bar__name">{auth.user.name}</span>
+      </span>
+      <button type="button" className="user-bar__logout" onClick={handleLogout}>
+        Sign out
+      </button>
+    </div>
+  );
+
+  if (results) {
+    return (
+      <div className="app">
+        {userBar}
+        <Dashboard
+          results={results}
+          onAnalyzeAgain={() => { setResults(null); setError(null); }}
+        />
+      </div>
+    );
+  }
+
   return (
     <div className="app">
-      <div className="user-bar">
-        <span>
-          Signed in as <span className="user-bar__name">{auth.user.name}</span>
-        </span>
-        <button type="button" className="user-bar__logout" onClick={handleLogout}>
-          Sign out
-        </button>
-      </div>
-
-      <Header />
-      <ResumeInput onAnalyze={handleAnalyze} isLoading={isLoading} />
-
-      {error && (
-        <div className="error-banner" id="error-banner">
-          <span className="error-banner__icon">⚠️</span>
-          {error}
-        </div>
-      )}
-
-      {isLoading && (
-        <div className="loading-overlay" id="loading-indicator">
-          <div className="loading-overlay__spinner"></div>
-          <div className="loading-overlay__text">Analyzing your resume...</div>
-        </div>
-      )}
-
-      <ResultsSection data={results} />
+      {userBar}
+      <LandingPage
+        onAnalyze={handleAnalyze}
+        isLoading={isLoading}
+        error={error}
+      />
     </div>
   );
 }
-
-export default App;
