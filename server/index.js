@@ -4,6 +4,7 @@ const { extractSkills } = require('./services/skillExtractor');
 const { matchJobs } = require('./services/matcher');
 const { analyzeGap } = require('./services/gapAnalyzer');
 const { getRecommendations } = require('./services/recommender');
+const { register, login } = require('./services/auth');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -64,6 +65,26 @@ app.post('/api/analyze', (req, res) => {
     console.error('Error analyzing resume:', error);
     res.status(500).json({ error: 'An error occurred while analyzing the resume.' });
   }
+});
+
+/**
+ * POST /api/auth/register
+ * Creates a new user account. Returns { user, token } or { error }.
+ */
+app.post('/api/auth/register', (req, res) => {
+  const result = register(req.body || {});
+  if (result.error) return res.status(400).json(result);
+  res.status(201).json(result);
+});
+
+/**
+ * POST /api/auth/login
+ * Authenticates credentials. Returns { user, token } or { error }.
+ */
+app.post('/api/auth/login', (req, res) => {
+  const result = login(req.body || {});
+  if (result.error) return res.status(401).json(result);
+  res.json(result);
 });
 
 // Health check

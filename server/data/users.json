@@ -1,0 +1,11 @@
+[
+  {
+    "id": "c3b08bd6-9db7-4c04-8bc5-b0cf9f100baf",
+    "name": "test name",
+    "email": "test@email.com",
+    "salt": "460ba7b0aff31641c65bbd52e6c1b5d0",
+    "passwordHash": "60c3bcd7aaa3be6d963c2c074e339759d815c97ceef43a9e6e9d1df24a5ff1b822d3504bf247ac01dbe9616841f58850d07536159317c33a4b5fa584965baab6",
+    "token": "a3e7a28b2ec512743f599232b18ac2b1142d7dad6112c015",
+    "createdAt": "2026-04-21T02:02:45.306Z"
+  }
+]
