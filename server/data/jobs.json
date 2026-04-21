@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "job_title": "Data Analyst",
+    "description": "Analyze datasets to extract business insights and create visual reports.",
+    "skills_required": ["python", "sql", "excel", "data visualization", "tableau", "pandas", "power bi", "critical thinking"]
+  },
+  {
+    "id": 2,
+    "job_title": "Frontend Developer",
+    "description": "Build modern, responsive user interfaces for web applications.",
+    "skills_required": ["javascript", "typescript", "react", "html", "css", "responsive design", "git", "jest"]
+  },
+  {
+    "id": 3,
+    "job_title": "Backend Developer",
+    "description": "Design and implement server-side logic, APIs, and database systems.",
+    "skills_required": ["node.js", "express", "python", "sql", "postgresql", "rest api", "docker", "git"]
+  },
+  {
+    "id": 4,
+    "job_title": "Full Stack Developer",
+    "description": "Develop both client-side and server-side components of web applications.",
+    "skills_required": ["javascript", "react", "node.js", "express", "sql", "mongodb", "html", "css", "git", "docker"]
+  },
+  {
+    "id": 5,
+    "job_title": "DevOps Engineer",
+    "description": "Automate infrastructure, manage CI/CD pipelines, and ensure system reliability.",
+    "skills_required": ["docker", "kubernetes", "aws", "terraform", "ci/cd", "jenkins", "linux", "bash", "monitoring", "git"]
+  },
+  {
+    "id": 6,
+    "job_title": "Machine Learning Engineer",
+    "description": "Build and deploy machine learning models for production systems.",
+    "skills_required": ["python", "machine learning", "deep learning", "tensorflow", "pytorch", "pandas", "numpy", "scikit-learn", "docker", "sql"]
+  },
+  {
+    "id": 7,
+    "job_title": "Mobile App Developer",
+    "description": "Design and develop native or cross-platform mobile applications.",
+    "skills_required": ["react native", "flutter", "javascript", "kotlin", "swift", "android", "ios", "git", "rest api"]
+  },
+  {
+    "id": 8,
+    "job_title": "UI/UX Designer",
+    "description": "Create user-centered designs and intuitive interfaces for digital products.",
+    "skills_required": ["figma", "adobe xd", "ui design", "ux research", "wireframing", "prototyping", "responsive design", "accessibility"]
+  },
+  {
+    "id": 9,
+    "job_title": "Cloud Architect",
+    "description": "Design scalable, secure cloud infrastructure solutions for enterprises.",
+    "skills_required": ["aws", "azure", "google cloud", "terraform", "kubernetes", "docker", "networking", "linux", "monitoring", "load balancing"]
+  },
+  {
+    "id": 10,
+    "job_title": "Cybersecurity Analyst",
+    "description": "Protect systems and networks from digital threats and vulnerabilities.",
+    "skills_required": ["network security", "encryption", "firewalls", "siem", "vulnerability assessment", "ethical hacking", "penetration testing", "linux"]
+  },
+  {
+    "id": 11,
+    "job_title": "Database Administrator",
+    "description": "Manage, optimize, and secure organizational database systems.",
+    "skills_required": ["sql", "mysql", "postgresql", "mongodb", "redis", "linux", "bash", "monitoring", "docker"]
+  },
+  {
+    "id": 12,
+    "job_title": "QA Engineer",
+    "description": "Ensure software quality through automated and manual testing strategies.",
+    "skills_required": ["selenium", "cypress", "jest", "unit testing", "integration testing", "javascript", "python", "git", "ci/cd", "jira"]
+  },
+  {
+    "id": 13,
+    "job_title": "Data Scientist",
+    "description": "Apply statistical analysis and machine learning to solve complex business problems.",
+    "skills_required": ["python", "r", "machine learning", "pandas", "numpy", "scikit-learn", "sql", "data visualization", "tensorflow", "spark"]
+  },
+  {
+    "id": 14,
+    "job_title": "Product Manager",
+    "description": "Define product vision, strategy, and roadmap while coordinating cross-functional teams.",
+    "skills_required": ["product strategy", "user stories", "roadmapping", "agile", "scrum", "jira", "communication", "leadership", "stakeholder management", "critical thinking"]
+  },
+  {
+    "id": 15,
+    "job_title": "Systems Administrator",
+    "description": "Maintain, configure, and ensure reliable operation of IT infrastructure.",
+    "skills_required": ["linux", "bash", "powershell", "nginx", "apache", "dns", "monitoring", "docker", "aws", "firewalls"]
+  }
+]

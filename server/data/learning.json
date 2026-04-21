@@ -1,0 +1,341 @@
+{
+  "python": [
+    { "title": "Python for Everybody – Coursera", "url": "https://www.coursera.org/specializations/python" },
+    { "title": "Learn Python – freeCodeCamp (YouTube)", "url": "https://www.youtube.com/watch?v=rfscVS0vtbw" }
+  ],
+  "javascript": [
+    { "title": "JavaScript Algorithms – freeCodeCamp", "url": "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/" },
+    { "title": "JavaScript Full Course – freeCodeCamp (YouTube)", "url": "https://www.youtube.com/watch?v=PkZNo7MFNFg" }
+  ],
+  "typescript": [
+    { "title": "TypeScript Handbook – Official Docs", "url": "https://www.typescriptlang.org/docs/handbook/" },
+    { "title": "TypeScript Full Course – freeCodeCamp (YouTube)", "url": "https://www.youtube.com/watch?v=30LWjhZzg50" }
+  ],
+  "java": [
+    { "title": "Java Programming – Coursera (Duke University)", "url": "https://www.coursera.org/specializations/java-programming" }
+  ],
+  "c++": [
+    { "title": "C++ Tutorial – freeCodeCamp (YouTube)", "url": "https://www.youtube.com/watch?v=vLnPwxZdW4Y" }
+  ],
+  "c#": [
+    { "title": "C# Fundamentals – Pluralsight", "url": "https://www.pluralsight.com/courses/csharp-fundamentals-dev" }
+  ],
+  "ruby": [
+    { "title": "Ruby on Rails Tutorial – Michael Hartl", "url": "https://www.railstutorial.org/" }
+  ],
+  "go": [
+    { "title": "Go Tour – Official", "url": "https://go.dev/tour/" }
+  ],
+  "rust": [
+    { "title": "The Rust Programming Language Book", "url": "https://doc.rust-lang.org/book/" }
+  ],
+  "php": [
+    { "title": "PHP Tutorial – W3Schools", "url": "https://www.w3schools.com/php/" }
+  ],
+  "swift": [
+    { "title": "Swift Programming – Apple Docs", "url": "https://docs.swift.org/swift-book/" }
+  ],
+  "kotlin": [
+    { "title": "Kotlin Official Docs", "url": "https://kotlinlang.org/docs/home.html" },
+    { "title": "Kotlin Course – freeCodeCamp (YouTube)", "url": "https://www.youtube.com/watch?v=F9UC9DY-vIU" }
+  ],
+  "r": [
+    { "title": "R Programming – Coursera (Johns Hopkins)", "url": "https://www.coursera.org/learn/r-programming" }
+  ],
+  "scala": [
+    { "title": "Scala Official Docs", "url": "https://docs.scala-lang.org/" }
+  ],
+  "html": [
+    { "title": "HTML Full Course – freeCodeCamp (YouTube)", "url": "https://www.youtube.com/watch?v=pQN-pnXPaVg" },
+    { "title": "Learn HTML – W3Schools", "url": "https://www.w3schools.com/html/" }
+  ],
+  "css": [
+    { "title": "CSS Tutorial – W3Schools", "url": "https://www.w3schools.com/css/" },
+    { "title": "CSS Full Course – freeCodeCamp (YouTube)", "url": "https://www.youtube.com/watch?v=1Rs2ND1ryYc" }
+  ],
+  "react": [
+    { "title": "React Official Tutorial", "url": "https://react.dev/learn" },
+    { "title": "React Course – freeCodeCamp (YouTube)", "url": "https://www.youtube.com/watch?v=bMknfKXIFA8" }
+  ],
+  "angular": [
+    { "title": "Angular Official Tutorial", "url": "https://angular.io/tutorial" }
+  ],
+  "vue": [
+    { "title": "Vue.js Official Guide", "url": "https://vuejs.org/guide/introduction.html" }
+  ],
+  "next.js": [
+    { "title": "Next.js Learn Course", "url": "https://nextjs.org/learn" }
+  ],
+  "node.js": [
+    { "title": "Node.js Tutorial – freeCodeCamp (YouTube)", "url": "https://www.youtube.com/watch?v=Oe421EPjeBE" },
+    { "title": "Node.js Official Guides", "url": "https://nodejs.org/en/docs/guides/" }
+  ],
+  "express": [
+    { "title": "Express.js Crash Course – Traversy Media (YouTube)", "url": "https://www.youtube.com/watch?v=L72fhGm1tfE" }
+  ],
+  "django": [
+    { "title": "Django Official Tutorial", "url": "https://docs.djangoproject.com/en/stable/intro/tutorial01/" }
+  ],
+  "flask": [
+    { "title": "Flask Mega-Tutorial – Miguel Grinberg", "url": "https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world" }
+  ],
+  "spring boot": [
+    { "title": "Spring Boot Guides – Official", "url": "https://spring.io/guides" }
+  ],
+  "sql": [
+    { "title": "SQL Tutorial – Khan Academy", "url": "https://www.khanacademy.org/computing/computer-programming/sql" },
+    { "title": "SQL Full Course – freeCodeCamp (YouTube)", "url": "https://www.youtube.com/watch?v=HXV3zeQKqGY" }
+  ],
+  "mysql": [
+    { "title": "MySQL Tutorial – W3Schools", "url": "https://www.w3schools.com/mysql/" }
+  ],
+  "postgresql": [
+    { "title": "PostgreSQL Tutorial", "url": "https://www.postgresqltutorial.com/" }
+  ],
+  "mongodb": [
+    { "title": "MongoDB University – Free Courses", "url": "https://university.mongodb.com/" }
+  ],
+  "redis": [
+    { "title": "Redis University", "url": "https://university.redis.com/" }
+  ],
+  "firebase": [
+    { "title": "Firebase Fundamentals – Google (YouTube)", "url": "https://www.youtube.com/watch?v=9kRgVxULbag" }
+  ],
+  "graphql": [
+    { "title": "GraphQL Official Learn", "url": "https://graphql.org/learn/" }
+  ],
+  "rest api": [
+    { "title": "RESTful API Design – freeCodeCamp", "url": "https://www.freecodecamp.org/news/rest-api-design-best-practices/" }
+  ],
+  "docker": [
+    { "title": "Docker Tutorial – TechWorld with Nana (YouTube)", "url": "https://www.youtube.com/watch?v=3c-iBn73dDE" },
+    { "title": "Docker Official Getting Started", "url": "https://docs.docker.com/get-started/" }
+  ],
+  "kubernetes": [
+    { "title": "Kubernetes Course – freeCodeCamp (YouTube)", "url": "https://www.youtube.com/watch?v=X48VuDVv0do" }
+  ],
+  "aws": [
+    { "title": "AWS Cloud Practitioner Essentials – Coursera", "url": "https://www.coursera.org/learn/aws-cloud-practitioner-essentials" }
+  ],
+  "azure": [
+    { "title": "Azure Fundamentals – Microsoft Learn", "url": "https://learn.microsoft.com/en-us/training/paths/az-900-describe-cloud-concepts/" }
+  ],
+  "google cloud": [
+    { "title": "Google Cloud Skills Boost", "url": "https://www.cloudskillsboost.google/" }
+  ],
+  "terraform": [
+    { "title": "Terraform Learn – HashiCorp", "url": "https://learn.hashicorp.com/terraform" }
+  ],
+  "ci/cd": [
+    { "title": "CI/CD Explained – freeCodeCamp", "url": "https://www.freecodecamp.org/news/what-is-ci-cd/" }
+  ],
+  "jenkins": [
+    { "title": "Jenkins Tutorial – TechWorld with Nana (YouTube)", "url": "https://www.youtube.com/watch?v=7KCS70sCoK0" }
+  ],
+  "git": [
+    { "title": "Git & GitHub Crash Course – freeCodeCamp (YouTube)", "url": "https://www.youtube.com/watch?v=RGOj5yH7evk" }
+  ],
+  "linux": [
+    { "title": "Linux Command Line – freeCodeCamp (YouTube)", "url": "https://www.youtube.com/watch?v=ZtqBQ68cfJc" }
+  ],
+  "bash": [
+    { "title": "Bash Scripting Tutorial – Ryan's Tutorials", "url": "https://ryanstutorials.net/bash-scripting-tutorial/" }
+  ],
+  "powershell": [
+    { "title": "PowerShell for Beginners – Microsoft Learn", "url": "https://learn.microsoft.com/en-us/powershell/scripting/learn/ps101/01-getting-started" }
+  ],
+  "machine learning": [
+    { "title": "Machine Learning – Coursera (Andrew Ng)", "url": "https://www.coursera.org/learn/machine-learning" },
+    { "title": "ML Crash Course – Google", "url": "https://developers.google.com/machine-learning/crash-course" }
+  ],
+  "deep learning": [
+    { "title": "Deep Learning Specialization – Coursera", "url": "https://www.coursera.org/specializations/deep-learning" }
+  ],
+  "tensorflow": [
+    { "title": "TensorFlow Official Tutorials", "url": "https://www.tensorflow.org/tutorials" }
+  ],
+  "pytorch": [
+    { "title": "PyTorch Official Tutorials", "url": "https://pytorch.org/tutorials/" }
+  ],
+  "natural language processing": [
+    { "title": "NLP Specialization – Coursera", "url": "https://www.coursera.org/specializations/natural-language-processing" }
+  ],
+  "computer vision": [
+    { "title": "Computer Vision – Coursera (University at Buffalo)", "url": "https://www.coursera.org/learn/computer-vision-basics" }
+  ],
+  "data visualization": [
+    { "title": "Data Visualization with Python – Coursera", "url": "https://www.coursera.org/learn/python-for-data-visualization" }
+  ],
+  "tableau": [
+    { "title": "Tableau Training – Official Free Videos", "url": "https://www.tableau.com/learn/training" }
+  ],
+  "power bi": [
+    { "title": "Power BI Learning Path – Microsoft Learn", "url": "https://learn.microsoft.com/en-us/training/powerplatform/power-bi" }
+  ],
+  "excel": [
+    { "title": "Excel Skills for Business – Coursera", "url": "https://www.coursera.org/specializations/excel" }
+  ],
+  "pandas": [
+    { "title": "Pandas Official Getting Started", "url": "https://pandas.pydata.org/docs/getting_started/index.html" }
+  ],
+  "numpy": [
+    { "title": "NumPy Quickstart Tutorial", "url": "https://numpy.org/doc/stable/user/quickstart.html" }
+  ],
+  "scikit-learn": [
+    { "title": "Scikit-learn Official Tutorial", "url": "https://scikit-learn.org/stable/tutorial/" }
+  ],
+  "spark": [
+    { "title": "Apache Spark Tutorial – Databricks", "url": "https://www.databricks.com/spark/getting-started-with-apache-spark" }
+  ],
+  "hadoop": [
+    { "title": "Hadoop Tutorial – Tutorialspoint", "url": "https://www.tutorialspoint.com/hadoop/index.htm" }
+  ],
+  "kafka": [
+    { "title": "Apache Kafka Tutorial – Confluent", "url": "https://developer.confluent.io/learn-kafka/" }
+  ],
+  "agile": [
+    { "title": "Agile with Atlassian Jira – Coursera", "url": "https://www.coursera.org/learn/agile-atlassian-jira" }
+  ],
+  "scrum": [
+    { "title": "Scrum Guide – Official", "url": "https://scrumguides.org/scrum-guide.html" }
+  ],
+  "jira": [
+    { "title": "Jira Fundamentals – Atlassian University", "url": "https://university.atlassian.com/student/collection/850385" }
+  ],
+  "figma": [
+    { "title": "Figma Tutorial – Official", "url": "https://help.figma.com/hc/en-us/categories/360002051613" },
+    { "title": "Figma UI Design Tutorial – freeCodeCamp (YouTube)", "url": "https://www.youtube.com/watch?v=jwCmIBJ8Jtc" }
+  ],
+  "adobe xd": [
+    { "title": "Adobe XD Tutorials – Official", "url": "https://helpx.adobe.com/xd/tutorials.html" }
+  ],
+  "sketch": [
+    { "title": "Sketch Documentation", "url": "https://www.sketch.com/docs/" }
+  ],
+  "ui design": [
+    { "title": "Google UX Design Certificate – Coursera", "url": "https://www.coursera.org/professional-certificates/google-ux-design" }
+  ],
+  "ux research": [
+    { "title": "UX Research Methods – NNGroup", "url": "https://www.nngroup.com/articles/which-ux-research-methods/" }
+  ],
+  "wireframing": [
+    { "title": "Wireframing Guide – Figma", "url": "https://www.figma.com/resource-library/wireframing/" }
+  ],
+  "prototyping": [
+    { "title": "Prototyping in Figma – Official", "url": "https://help.figma.com/hc/en-us/articles/360040314193" }
+  ],
+  "responsive design": [
+    { "title": "Responsive Web Design – freeCodeCamp", "url": "https://www.freecodecamp.org/learn/responsive-web-design/" }
+  ],
+  "accessibility": [
+    { "title": "Web Accessibility – Udacity (Google)", "url": "https://www.udacity.com/course/web-accessibility--ud891" }
+  ],
+  "seo": [
+    { "title": "SEO Fundamentals – Semrush Academy", "url": "https://www.semrush.com/academy/courses/seo-fundamentals-course/" }
+  ],
+  "react native": [
+    { "title": "React Native Official Tutorial", "url": "https://reactnative.dev/docs/tutorial" }
+  ],
+  "flutter": [
+    { "title": "Flutter Official Codelabs", "url": "https://docs.flutter.dev/codelabs" }
+  ],
+  "swift ui": [
+    { "title": "SwiftUI Tutorials – Apple", "url": "https://developer.apple.com/tutorials/swiftui" }
+  ],
+  "android": [
+    { "title": "Android Development – Google Codelabs", "url": "https://developer.android.com/courses" }
+  ],
+  "ios": [
+    { "title": "iOS Development – Apple Tutorials", "url": "https://developer.apple.com/tutorials/" }
+  ],
+  "selenium": [
+    { "title": "Selenium Tutorial – Guru99", "url": "https://www.guru99.com/selenium-tutorial.html" }
+  ],
+  "cypress": [
+    { "title": "Cypress Official Docs", "url": "https://docs.cypress.io/guides/overview/why-cypress" }
+  ],
+  "jest": [
+    { "title": "Jest Getting Started – Official", "url": "https://jestjs.io/docs/getting-started" }
+  ],
+  "unit testing": [
+    { "title": "Unit Testing Guide – Martin Fowler", "url": "https://martinfowler.com/bliki/UnitTest.html" }
+  ],
+  "integration testing": [
+    { "title": "Integration Testing – Atlassian", "url": "https://www.atlassian.com/continuous-delivery/software-testing/types-of-software-testing" }
+  ],
+  "penetration testing": [
+    { "title": "Penetration Testing – TryHackMe", "url": "https://tryhackme.com/" }
+  ],
+  "network security": [
+    { "title": "Network Security – Coursera (Google)", "url": "https://www.coursera.org/learn/network-security-communication-sscp" }
+  ],
+  "encryption": [
+    { "title": "Cryptography I – Coursera (Stanford)", "url": "https://www.coursera.org/learn/crypto" }
+  ],
+  "firewalls": [
+    { "title": "Firewall Explained – PowerCert (YouTube)", "url": "https://www.youtube.com/watch?v=kDEX1HXybrU" }
+  ],
+  "siem": [
+    { "title": "SIEM Tutorial – IBM Security", "url": "https://www.ibm.com/topics/siem" }
+  ],
+  "vulnerability assessment": [
+    { "title": "Vulnerability Assessment Guide – OWASP", "url": "https://owasp.org/www-community/Vulnerability_Scanning_Tools" }
+  ],
+  "ethical hacking": [
+    { "title": "Ethical Hacking – freeCodeCamp (YouTube)", "url": "https://www.youtube.com/watch?v=3Kq1MIfTWCE" }
+  ],
+  "nginx": [
+    { "title": "NGINX Fundamentals – Udemy", "url": "https://www.udemy.com/course/nginx-fundamentals/" }
+  ],
+  "apache": [
+    { "title": "Apache HTTP Server Tutorial", "url": "https://httpd.apache.org/docs/current/getting-started.html" }
+  ],
+  "dns": [
+    { "title": "DNS Explained – PowerCert (YouTube)", "url": "https://www.youtube.com/watch?v=27r4Bzuj5NQ" }
+  ],
+  "load balancing": [
+    { "title": "Load Balancing – NGINX Docs", "url": "https://docs.nginx.com/nginx/admin-guide/load-balancer/http-load-balancer/" }
+  ],
+  "monitoring": [
+    { "title": "Monitoring with Prometheus – TechWorld with Nana (YouTube)", "url": "https://www.youtube.com/watch?v=QoDqxm7ybLc" }
+  ],
+  "logging": [
+    { "title": "Logging Best Practices – Datadog", "url": "https://www.datadoghq.com/blog/log-management-best-practices/" }
+  ],
+  "prometheus": [
+    { "title": "Prometheus Official Docs", "url": "https://prometheus.io/docs/introduction/overview/" }
+  ],
+  "grafana": [
+    { "title": "Grafana Fundamentals – Official", "url": "https://grafana.com/tutorials/grafana-fundamentals/" }
+  ],
+  "communication": [
+    { "title": "Improving Communication Skills – Coursera", "url": "https://www.coursera.org/learn/wharton-communication-skills" }
+  ],
+  "leadership": [
+    { "title": "Leadership Skills – Coursera (University of Michigan)", "url": "https://www.coursera.org/specializations/leading-people-teams" }
+  ],
+  "problem solving": [
+    { "title": "Problem Solving – Coursera (University of Minnesota)", "url": "https://www.coursera.org/learn/problem-solving" }
+  ],
+  "critical thinking": [
+    { "title": "Critical Thinking Skills – Coursera", "url": "https://www.coursera.org/learn/critical-thinking-skills-for-professionals" }
+  ],
+  "teamwork": [
+    { "title": "Teamwork Skills – Coursera (University of Colorado)", "url": "https://www.coursera.org/learn/teamwork-skills" }
+  ],
+  "project management": [
+    { "title": "Google Project Management Certificate – Coursera", "url": "https://www.coursera.org/professional-certificates/google-project-management" }
+  ],
+  "stakeholder management": [
+    { "title": "Stakeholder Management – Coursera", "url": "https://www.coursera.org/learn/stakeholder-management" }
+  ],
+  "product strategy": [
+    { "title": "Product Strategy – Coursera (University of Alberta)", "url": "https://www.coursera.org/learn/product-strategy" }
+  ],
+  "user stories": [
+    { "title": "Writing User Stories – Atlassian", "url": "https://www.atlassian.com/agile/project-management/user-stories" }
+  ],
+  "roadmapping": [
+    { "title": "Product Roadmapping – Productboard", "url": "https://www.productboard.com/glossary/product-roadmap/" }
+  ]
+}
