@@ -1,1 +1,54 @@
-/* App.css is intentionally empty — all styles are in index.css */
+/* Results page nav — sits on top of the dark analyzer UI */
+.results-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background: rgba(13, 17, 23, 0.9);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(100, 140, 255, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.results-nav__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(100, 140, 255, 0.08);
+  border: 1px solid rgba(100, 140, 255, 0.15);
+  border-radius: 10px;
+  color: #a5b4fc;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.results-nav__back:hover {
+  background: rgba(100, 140, 255, 0.14);
+  border-color: rgba(100, 140, 255, 0.28);
+  color: #c7d2fe;
+}
+
+.results-nav__brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: #e8ecf4;
+}
+
+.results-nav__brand svg {
+  background: linear-gradient(135deg, #00236f, #1e3a8a);
+  border-radius: 6px;
+  padding: 3px;
+  width: 24px;
+  height: 24px;
+}

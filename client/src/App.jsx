@@ -1,20 +1,18 @@
 import { useState } from 'react';
+import LandingPage from './pages/LandingPage';
+import Dashboard   from './dashboard/Dashboard';
 import './App.css';
-import Header from './components/Header';
-import ResumeInput from './components/ResumeInput';
-import ResultsSection from './components/ResultsSection';
 
 const API_URL = 'http://localhost:5000/api/analyze';
 
-function App() {
-  const [results, setResults] = useState(null);
+export default function App() {
+  const [results,   setResults]   = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [error,     setError]     = useState(null);
 
   const handleAnalyze = async (resumeText) => {
     setIsLoading(true);
     setError(null);
-    setResults(null);
 
     try {
       const response = await fetch(API_URL, {
@@ -30,14 +28,6 @@ function App() {
 
       const data = await response.json();
       setResults(data);
-
-      // Scroll to results
-      setTimeout(() => {
-        document.getElementById('results-section')?.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start',
-        });
-      }, 100);
     } catch (err) {
       setError(err.message || 'Failed to connect to the server. Make sure the backend is running.');
     } finally {
@@ -45,28 +35,20 @@ function App() {
     }
   };
 
+  if (results) {
+    return (
+      <Dashboard
+        results={results}
+        onAnalyzeAgain={() => { setResults(null); setError(null); }}
+      />
+    );
+  }
+
   return (
-    <div className="app">
-      <Header />
-      <ResumeInput onAnalyze={handleAnalyze} isLoading={isLoading} />
-
-      {error && (
-        <div className="error-banner" id="error-banner">
-          <span className="error-banner__icon">⚠️</span>
-          {error}
-        </div>
-      )}
-
-      {isLoading && (
-        <div className="loading-overlay" id="loading-indicator">
-          <div className="loading-overlay__spinner"></div>
-          <div className="loading-overlay__text">Analyzing your resume...</div>
-        </div>
-      )}
-
-      <ResultsSection data={results} />
-    </div>
+    <LandingPage
+      onAnalyze={handleAnalyze}
+      isLoading={isLoading}
+      error={error}
+    />
   );
 }
-
-export default App;
