@@ -101,7 +101,7 @@ function NavBar({ onLogoClick }) {
           <div className="lp-nav__logo">
             <LogoIcon />
           </div>
-          <span className="lp-nav__name">Curator AI</span>
+          <span className="lp-nav__name">Aptitude</span>
         </button>
 
         <div className="lp-nav__links">
@@ -144,7 +144,7 @@ function HeroSection({ onAnalyzeClick }) {
           </h1>
 
           <p className="lp-hero__subtitle lp-animate lp-animate--2">
-            Move beyond simple keyword matching. Curator AI performs deep
+            Move beyond simple keyword matching. Aptitude performs deep
             semantic analysis of your professional trajectory to find roles
             that align with your true potential, not just your past titles.
           </p>
@@ -367,7 +367,7 @@ function FooterSection() {
           <div>
             <div className="lp-footer__brand">
               <div className="lp-footer__logo"><LogoIcon /></div>
-              <span className="lp-footer__name">Curator AI</span>
+              <span className="lp-footer__name">Aptitude</span>
             </div>
             <p className="lp-footer__desc">
               The premium executive suite for modern career intelligence. Built for
@@ -416,7 +416,7 @@ function FooterSection() {
         </div>
 
         <div className="lp-footer__bottom">
-          <span className="lp-footer__copy">© 2024 Curator AI. All rights reserved.</span>
+          <span className="lp-footer__copy">© 2024 Aptitude. All rights reserved.</span>
           <div className="lp-footer__legal">
             <a href="#">Terms of Service</a>
             <a href="#">Privacy Policy</a>

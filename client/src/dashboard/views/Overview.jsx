@@ -68,7 +68,7 @@ export default function Overview({ results, onJobSelect }) {
           <p className="db-overview__sub">All-drive analysis of your professional trajectory</p>
         </div>
         <div className="db-score-card">
-          <span className="db-score-card__label">Curator AI Score</span>
+          <span className="db-score-card__label">Aptitude Score</span>
           <span className="db-score-card__value">{scoreLabel}</span>
         </div>
       </div>
@@ -121,7 +121,7 @@ export default function Overview({ results, onJobSelect }) {
             <div className="db-coaching__head">
               <div>
                 <div className="db-coaching__title">AI Career Coaching</div>
-                <div className="db-coaching__subtitle">Powered by Curator Intelligence Engine</div>
+                <div className="db-coaching__subtitle">Powered by Aptitude Intelligence Engine</div>
               </div>
               <span className="db-badge db-badge--live"><span className="db-badge__dot" />Live</span>
             </div>

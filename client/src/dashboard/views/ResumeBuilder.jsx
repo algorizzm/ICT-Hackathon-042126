@@ -99,7 +99,7 @@ export default function ResumeBuilder({ results }) {
           <div className="db-rb-preview__name">ALEXANDER STERLING</div>
           <div className="db-rb-preview__role">{topJob?.job_title || 'Senior Data Architect'} · Cloud Infrastructure Lead</div>
           <div className="db-rb-preview__meta">
-            <span>alexander@curator.ai</span>
+            <span>alexander@aptitude.ai</span>
             <span>·</span>
             <span>San Francisco, CA</span>
             <span>·</span>

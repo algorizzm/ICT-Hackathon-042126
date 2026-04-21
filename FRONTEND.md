@@ -1,4 +1,4 @@
-# Curator AI — Frontend Documentation
+# Aptitude — Frontend Documentation
 
 > **Stack:** React 19 + Vite 8 · CSS Modules (manual prefix scoping) · No routing library  
 > **Last updated:** 2026-04-21
@@ -24,7 +24,7 @@
 
 ## 1. Project Overview
 
-Curator AI is a **career intelligence SaaS** that analyzes a user's resume against a job database, surfaces skill gaps, and provides personalized learning pathways. The frontend is a single-page React app with two primary surfaces:
+Aptitude is a **career intelligence SaaS** that analyzes a user's resume against a job database, surfaces skill gaps, and provides personalized learning pathways. The frontend is a single-page React app with two primary surfaces:
 
 | Surface | Path | Theme | Purpose |
 |---|---|---|---|
@@ -336,7 +336,7 @@ Separation between surfaces is achieved through **tonal background shifts**, not
 
 **Layout:**
 - Job header: title, description, meta chips (location, salary, contract type)
-- Left: Large radial readiness score + career path simulator bar + skill gap analysis (matched vs. missing chips) + Curator's Tip (glassmorphism)
+- Left: Large radial readiness score + career path simulator bar + skill gap analysis (matched vs. missing chips) + Aptitude's Tip (glassmorphism)
 - Right: Fastest Path to Hire bar chart + Market Competitiveness stack + Salary Benchmark card (indigo gradient)
 
 ---
@@ -353,14 +353,14 @@ Separation between surfaces is achieved through **tonal background shifts**, not
 
 ### SkillLab (`views/SkillLab.jsx`)
 
-**Data used:** `results.results[0].missingSkills[0]` (for Curator suggestion)
+**Data used:** `results.results[0].missingSkills[0]` (for Aptitude suggestion)
 
 **Layout:**
 - Header with badge count
 - Current Focus card (gradient, 86% progress bar)
 - Badges + Certificates row
 - Filterable module grid (All / Beginner / Intermediate / Advanced)
-- Curator suggestion + 2 lab cards
+- Aptitude suggestion + 2 lab cards
 
 ---
 
@@ -480,7 +480,7 @@ LandingPage.jsx
 |---|-------|----------|
 | 10 | Dashboard has no mobile sidebar — at `<768px` the 240px sidebar takes too much horizontal space | `Dashboard.jsx/css` |
 | 11 | Dashboard two-column grids (`db-overview__grid`, `db-skillgap__grid`) don't collapse on mobile | `Dashboard.css` |
-| 12 | SkillLab 3-column curator row (`grid-template-columns: 1fr 1fr 1fr`) doesn't have a mobile breakpoint | `SkillLab.jsx:182` |
+| 12 | SkillLab 3-column aptitude row (`grid-template-columns: 1fr 1fr 1fr`) doesn't have a mobile breakpoint | `SkillLab.jsx:182` |
 
 ### Accessibility Gaps
 

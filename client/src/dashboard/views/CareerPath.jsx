@@ -141,7 +141,7 @@ export default function CareerPath({ results }) {
               {/* AI rec */}
               <div style={{marginTop:12,padding:'10px 12px',background:'rgba(139,92,246,0.07)',borderRadius:'10px'}}>
                 <div style={{fontSize:'0.65rem',fontWeight:700,color:'var(--purple)',textTransform:'uppercase',letterSpacing:'0.7px',marginBottom:4}}>
-                  Curator AI Recommendation
+                  Aptitude Recommendation
                 </div>
                 <p style={{fontSize:'0.75rem',color:'var(--text-2)',lineHeight:1.55}}>{path.aiRec}</p>
               </div>

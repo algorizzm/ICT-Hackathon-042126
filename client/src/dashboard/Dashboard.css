@@ -1,5 +1,5 @@
 /* ============================================================
-   CURATOR AI DASHBOARD — "Cognitive Core" Light Design System
+   APTITUDE AI DASHBOARD — "Cognitive Core" Light Design System
    ============================================================
    Rules enforced:
    • No explicit 1px borders on cards/containers (tonal shifts only)
@@ -440,8 +440,8 @@ body:has(.dashboard) { background: var(--bg); }
 .db-path-item__bar-wrap { flex: 1; height: 4px; background: var(--bg-low); border-radius: var(--r-full); margin: 0 12px; overflow: hidden; }
 .db-path-item__bar      { height: 100%; border-radius: var(--r-full); background: var(--g-cyan); }
 
-/* Curator's tip — glassmorphism (AI insight element) */
-.db-curator-tip {
+/* Aptitude's tip — glassmorphism (AI insight element) */
+.db-aptitude-tip {
   background: var(--glass-bg);
   -webkit-backdrop-filter: blur(var(--glass-blur));
   backdrop-filter: blur(var(--glass-blur));
@@ -449,12 +449,12 @@ body:has(.dashboard) { background: var(--bg); }
   padding: 18px;
   box-shadow: var(--sh-xs);
 }
-.db-curator-tip__head {
+.db-aptitude-tip__head {
   display: flex; align-items: center; gap: 8px;
   font-size: 0.75rem; font-weight: 700; color: var(--purple);
   text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 8px;
 }
-.db-curator-tip__body { font-size: 0.82rem; color: var(--ink-2); line-height: 1.6; }
+.db-aptitude-tip__body { font-size: 0.82rem; color: var(--ink-2); line-height: 1.6; }
 
 .db-market-bar { margin-bottom: 12px; }
 .db-market-bar__head { display: flex; justify-content: space-between; margin-bottom: 5px; }
@@ -614,17 +614,17 @@ body:has(.dashboard) { background: var(--bg); }
 .db-module-card__btn--continue { background: var(--g-primary); color: white; }
 .db-module-card__btn--review   { background: var(--green-bg);  color: var(--green); }
 
-.db-curator-suggest {
+.db-aptitude-suggest {
   background: var(--card);
   border-radius: var(--r-xl);
   box-shadow: var(--sh-xs);
   padding: 18px;
   display: flex; gap: 14px; align-items: flex-start;
 }
-.db-curator-suggest__icon  { width: 36px; height: 36px; border-radius: var(--r-md); background: var(--purple-bg); color: var(--purple); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-.db-curator-suggest__title { font-size: 0.82rem; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
-.db-curator-suggest__body  { font-size: 0.78rem; color: var(--ink-2); line-height: 1.55; }
-.db-curator-suggest__trend { display: flex; align-items: center; gap: 5px; margin-top: 6px; font-size: 0.72rem; color: var(--green); font-weight: 600; }
+.db-aptitude-suggest__icon  { width: 36px; height: 36px; border-radius: var(--r-md); background: var(--purple-bg); color: var(--purple); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.db-aptitude-suggest__title { font-size: 0.82rem; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+.db-aptitude-suggest__body  { font-size: 0.78rem; color: var(--ink-2); line-height: 1.55; }
+.db-aptitude-suggest__trend { display: flex; align-items: center; gap: 5px; margin-top: 6px; font-size: 0.72rem; color: var(--green); font-weight: 600; }
 
 /* ═══════════════════════════════════════════════════════════
    RESOURCE LIBRARY

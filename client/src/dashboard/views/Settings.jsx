@@ -5,7 +5,7 @@ const SETTING_CARDS = [
   {
     id:'privacy',
     title:'Privacy Cabinet',
-    desc:'Control who sees your profile data, skill signals, and career activity within the Curator network.',
+    desc:'Control who sees your profile data, skill signals, and career activity within the Aptitude network.',
     iconBg:'rgba(9,196,224,0.10)', iconColor:'var(--cyan)',
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -30,7 +30,7 @@ const SETTING_CARDS = [
   {
     id:'ai',
     title:'AI Data Sovereignty',
-    desc:'Manage how Curator AI uses your resume and career data to train personalized models.',
+    desc:'Manage how Aptitude uses your resume and career data to train personalized models.',
     iconBg:'rgba(139,92,246,0.10)', iconColor:'var(--purple)',
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -43,7 +43,7 @@ const SETTING_CARDS = [
 ];
 
 const TOGGLES = [
-  { id:'job-alerts',   label:'Job Match Alerts',     desc:'Notify when a new match exceeds 80%',  on:true  },
+  { id:'job-alerts',   label:'Aptitude Alerts',     desc:'Notify when a new match exceeds 80%',  on:true  },
   { id:'market',       label:'Market Intelligence Feed', desc:'Weekly AI market insights digest',  on:true  },
   { id:'resume-sync',  label:'Resume Auto-Sync',     desc:'Sync Skill Lab completions to resume',  on:false },
   { id:'competitors',  label:'Competitor Tracking',  desc:'Monitor similar profiles in your area', on:false },
@@ -98,7 +98,7 @@ export default function Settings({ results }) {
               <div className="db-profile-name">Your Profile</div>
               <div className="db-profile-role">{topJob?.job_title || 'Career Intelligence User'}</div>
               <div className="db-profile-tags">
-                <span className="db-chip db-chip--purple" style={{fontSize:'0.7rem'}}>Job Match AI</span>
+                <span className="db-chip db-chip--purple" style={{fontSize:'0.7rem'}}>Aptitude AI</span>
                 <span className="db-chip db-chip--skill"  style={{fontSize:'0.7rem'}}>{skillCount} Skills</span>
               </div>
             </div>
@@ -108,7 +108,7 @@ export default function Settings({ results }) {
             </div>
           </div>
           <p className="db-profile-bio">
-            Your resume has been analyzed by Curator AI. {skillCount} skills identified, {jobCount} job matches found.
+            Your resume has been analyzed by Aptitude. {skillCount} skills identified, {jobCount} job matches found.
             {topJob && ` Top match: ${topJob.job_title} at ${topScore}% readiness.`}
           </p>
           <div style={{marginTop:12,display:'flex',gap:8,flexWrap:'wrap'}}>

@@ -95,7 +95,7 @@ function Sidebar({ active, onNav, onAnalyzeAgain, isOpen, onClose }) {
         <div className="db-sidebar__brand">
           <div className="db-sidebar__logo"><LogoIcon /></div>
           <div className="db-sidebar__brand-text">
-            <div className="db-sidebar__brand-name">The Curator</div>
+            <div className="db-sidebar__brand-name">The Aptitude</div>
             <div className="db-sidebar__brand-sub">Career Intelligence</div>
           </div>
           <button className="db-sidebar__close" onClick={onClose} aria-label="Close menu">
@@ -180,7 +180,7 @@ export default function Dashboard({ results, onAnalyzeAgain }) {
           </button>
           <div className="db-mobile-bar__brand">
             <div className="db-sidebar__logo"><LogoIcon /></div>
-            <span style={{fontFamily:'Manrope,sans-serif',fontWeight:800,fontSize:'0.88rem',color:'var(--ink)'}}>The Curator</span>
+            <span style={{fontFamily:'Manrope,sans-serif',fontWeight:800,fontSize:'0.88rem',color:'var(--ink)'}}>The Aptitude</span>
           </div>
         </div>
         {renderView()}

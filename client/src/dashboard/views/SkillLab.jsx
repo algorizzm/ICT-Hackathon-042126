@@ -61,9 +61,9 @@ export default function SkillLab({ results }) {
       <div className="db-skilllab__header">
         <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',flexWrap:'wrap',gap:12}}>
           <div>
-            <div className="db-badge db-badge--purple" style={{marginBottom:8}}><span className="db-badge__dot"/>Knowledge Curator</div>
+            <div className="db-badge db-badge--purple" style={{marginBottom:8}}><span className="db-badge__dot"/>Knowledge Aptitude</div>
             <h1 className="db-skilllab__title">Skill Lab</h1>
-            <p className="db-skilllab__sub">Interactive modules designed to bridge your unique skill gaps using Curator AI intelligence.</p>
+            <p className="db-skilllab__sub">Interactive modules designed to bridge your unique skill gaps using Aptitude intelligence.</p>
           </div>
           <div style={{display:'flex',alignItems:'center',gap:8,background:'var(--card)',border:'1px solid var(--border)',borderRadius:'var(--r-xl)',padding:'10px 16px'}}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
@@ -178,19 +178,19 @@ export default function SkillLab({ results }) {
         </div>
       </div>
 
-      {/* Curator's suggestion */}
+      {/* Aptitude's suggestion */}
       <div style={{marginTop:20,display:'grid',gridTemplateColumns:'1fr 1fr 1fr',gap:12}}>
-        <div className="db-curator-suggest">
-          <div className="db-curator-suggest__icon">
+        <div className="db-aptitude-suggest">
+          <div className="db-aptitude-suggest__icon">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           </div>
           <div>
-            <div className="db-curator-suggest__title">Curator's Suggestion</div>
-            <p className="db-curator-suggest__body">
+            <div className="db-aptitude-suggest__title">Aptitude's Suggestion</div>
+            <p className="db-aptitude-suggest__body">
               Based on your recent Product Manager job matches, we recommend focusing on{' '}
               <strong style={{color:'var(--text)'}}>{topRec}</strong> to close your top skill gap.
             </p>
-            <div className="db-curator-suggest__trend"><TrendUpIcon /> MARKET TREND · +60% Demand This Month</div>
+            <div className="db-aptitude-suggest__trend"><TrendUpIcon /> MARKET TREND · +60% Demand This Month</div>
           </div>
         </div>
         {[{label:'Lab 01', title:'Terminal Velocity', desc:'Rapid CLI proficiency to ace your speed and accuracy in Linux environments.'},

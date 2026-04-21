@@ -6,7 +6,7 @@ export default function Header() {
         AI-Powered Analysis
       </div>
       <h1 className="header__title">
-        Job Match <span className="header__title-gradient">& Skill Gap</span> Analyzer
+        Aptitude <span className="header__title-gradient">& Skill Gap</span> Analyzer
       </h1>
       <p className="header__subtitle">
         Paste your resume below and discover your best career matches, 
