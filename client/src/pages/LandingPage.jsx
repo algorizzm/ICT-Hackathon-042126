@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import API_BASE_URL from '../config';
 import './LandingPage.css';
 import '../dashboard/Dashboard.css';
 import ResumeBuilder from '../dashboard/views/ResumeBuilder';
@@ -250,7 +251,7 @@ function ResumeSection({ resumeText, setResumeText, onAnalyze, isLoading, error 
       const formData = new FormData();
       formData.append('resume', file);
 
-      const res = await fetch('http://localhost:5000/api/extract', {
+      const res = await fetch(`${API_BASE_URL}/api/extract`, {
         method: 'POST',
         body: formData
       });

@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react';
 import LandingPage from './pages/LandingPage';
 import Dashboard from './dashboard/Dashboard';
 import AuthScreen from './components/AuthScreen';
+import API_BASE_URL from './config';
 import './App.css';
 
-const API_URL = 'http://localhost:5000/api/analyze';
+const API_URL = `${API_BASE_URL}/api/analyze`;
 const AUTH_STORAGE_KEY = 'jobmatch.auth';
 
 export default function App() {

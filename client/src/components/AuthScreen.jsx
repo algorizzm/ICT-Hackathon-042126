@@ -1,6 +1,7 @@
 import { useState } from 'react';
+import API_BASE_URL from '../config';
 
-const API_BASE = 'http://localhost:5000/api/auth';
+const API_BASE = `${API_BASE_URL}/api/auth`;
 
 export default function AuthScreen({ onAuth }) {
   const [mode, setMode] = useState('login');
@@ -55,8 +56,8 @@ export default function AuthScreen({ onAuth }) {
             {isRegister ? 'Create Account' : 'Welcome Back'}
           </div>
           <h1 className="auth-card__title">
-            {isRegister ? 'Join the ' : 'Sign in to '}
-            <span className="header__title-gradient">Job Match</span>
+            {isRegister ? 'Join ' : 'Sign in to '}
+            <span className="header__title-gradient">Aptitude</span>
           </h1>
           <p className="auth-card__subtitle">
             {isRegister
