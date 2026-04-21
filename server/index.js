@@ -1,17 +1,101 @@
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
+const multer = require('multer');
+const pdfParse = require('pdf-parse');
+const mammoth = require('mammoth');
 const { extractSkills } = require('./services/skillExtractor');
 const { matchJobs } = require('./services/matcher');
 const { analyzeGap } = require('./services/gapAnalyzer');
 const { getRecommendations } = require('./services/recommender');
 const { register, login } = require('./services/auth');
+const { generateSummary, enhanceBulletPoint, generateExperienceBullets } = require('./services/aiGenerator');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+// Setup multer for in-memory file uploads
+const upload = multer({ storage: multer.memoryStorage() });
+
 // Middleware
 app.use(cors());
 app.use(express.json({ limit: '1mb' }));
+
+/**
+ * POST /api/ai/summary
+ * Generate an AI summary based on skills and target job.
+ */
+app.post('/api/ai/summary', async (req, res) => {
+  try {
+    const { skills, jobTitle } = req.body;
+    const summary = await generateSummary(skills || [], jobTitle || '');
+    res.json({ summary });
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to generate summary' });
+  }
+});
+
+/**
+ * POST /api/ai/enhance
+ * Enhance a single resume bullet point.
+ */
+app.post('/api/ai/enhance', async (req, res) => {
+  try {
+    const { text } = req.body;
+    if (!text) return res.status(400).json({ error: 'Missing text to enhance' });
+    const enhanced = await enhanceBulletPoint(text);
+    res.json({ enhanced });
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to enhance bullet' });
+  }
+});
+
+/**
+ * POST /api/ai/bullets
+ * Generate ATS-friendly experience bullet points from structured user input.
+ */
+app.post('/api/ai/bullets', async (req, res) => {
+  try {
+    const { jobTitle, industry, userTasks, tools, experienceLevel } = req.body;
+    if (!userTasks) return res.status(400).json({ error: 'Missing userTasks field' });
+    const bullets = await generateExperienceBullets({ jobTitle, industry, userTasks, tools, experienceLevel });
+    res.json({ bullets });
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to generate bullet points' });
+  }
+});
+
+/**
+ * POST /api/extract
+ * Extracts text from uploaded PDF or Word document.
+ */
+app.post('/api/extract', upload.single('resume'), async (req, res) => {
+  try {
+    if (!req.file) {
+      return res.status(400).json({ error: 'No file uploaded.' });
+    }
+
+    const { mimetype, buffer } = req.file;
+    let extractedText = '';
+
+    if (mimetype === 'application/pdf') {
+      const pdfData = await pdfParse(buffer);
+      extractedText = pdfData.text;
+    } else if (mimetype === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || mimetype === 'application/msword') {
+      const docxData = await mammoth.extractRawText({ buffer });
+      extractedText = docxData.value;
+    } else if (mimetype === 'text/plain') {
+      extractedText = buffer.toString('utf-8');
+    } else {
+      return res.status(400).json({ error: 'Unsupported file format. Please upload PDF, DOCX, or TXT.' });
+    }
+
+    res.json({ extractedText });
+  } catch (error) {
+    console.error('Extraction error:', error);
+    res.status(500).json({ error: 'Failed to extract text from file.' });
+  }
+});
 
 /**
  * POST /api/analyze

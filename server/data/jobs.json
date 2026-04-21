@@ -88,5 +88,137 @@
     "job_title": "Systems Administrator",
     "description": "Maintain, configure, and ensure reliable operation of IT infrastructure.",
     "skills_required": ["linux", "bash", "powershell", "nginx", "apache", "dns", "monitoring", "docker", "aws", "firewalls"]
+  },
+  {
+    "id": 16,
+    "job_title": "Sr. HR Generalist",
+    "description": "Support HR operations across recruitment, employee relations, benefits, and compliance in a mid-to-large organization.",
+    "skills_required": ["employee relations", "talent acquisition", "performance management", "compensation and benefits", "employment law", "benefits administration", "hr policies and procedures", "recruitment", "communication", "interpersonal skills", "teamwork", "change management", "mentoring", "payroll", "hris", "compliance", "confidentiality"]
+  },
+  {
+    "id": 17,
+    "job_title": "Human Resources Manager",
+    "description": "Manage HR functions including talent acquisition, performance management, payroll, and legal compliance.",
+    "skills_required": ["talent acquisition", "performance management", "compliance", "payroll", "microsoft office", "policy development", "training and development", "teamwork", "communication", "problem solving", "leadership", "organizational skills", "attention to detail", "adaptability"]
+  },
+  {
+    "id": 18,
+    "job_title": "Director of Human Resources",
+    "description": "Lead HR strategy, oversee department operations, and drive people programs across the organization.",
+    "skills_required": ["recruitment", "employee relations", "performance management", "compliance", "data management", "training and development", "payroll", "project management", "microsoft office", "communication", "teamwork", "attention to detail", "problem solving", "conflict resolution", "leadership", "time management", "adaptability"]
+  },
+  {
+    "id": 19,
+    "job_title": "Chief Human Resources Officer",
+    "description": "Define and execute company-wide HR strategy, culture, talent management, and organizational development.",
+    "skills_required": ["talent management", "organizational development", "compliance", "hris", "data analysis", "compensation and benefits", "strategic hr planning", "workforce planning", "training and development", "performance management", "leadership", "communication", "teamwork", "change management", "employee engagement", "problem solving"]
+  },
+  {
+    "id": 20,
+    "job_title": "HR Generalist",
+    "description": "Perform broad HR functions including onboarding, employee relations, compliance, and HRIS management.",
+    "skills_required": ["microsoft office", "data analysis", "onboarding", "strategic thinking", "problem solving", "time management", "attention to detail", "communication", "interpersonal skills", "hris", "organizational development", "change management", "compliance", "performance management", "conflict resolution", "confidentiality"]
+  },
+  {
+    "id": 21,
+    "job_title": "HR Manager",
+    "description": "Oversee HR policies, talent acquisition, benefits administration, and labor compliance.",
+    "skills_required": ["talent acquisition", "compliance", "employee relations", "benefits administration", "payroll", "communication", "leadership", "teamwork", "problem solving", "organizational skills", "attention to detail", "adaptability", "excel", "microsoft office"]
+  },
+  {
+    "id": 22,
+    "job_title": "HR Generalist (Operations)",
+    "description": "Handle day-to-day HR operations including recruitment, onboarding, benefits, and employee relations.",
+    "skills_required": ["microsoft office", "communication", "attention to detail", "recruitment", "training and development", "onboarding", "performance management", "hris", "benefits administration", "employment law", "employee relations", "time management", "teamwork", "confidentiality", "relationship building"]
+  },
+  {
+    "id": 23,
+    "job_title": "HRIS Specialist",
+    "description": "Configure, maintain, and optimize HRIS platforms while managing HR data and reporting.",
+    "skills_required": ["hris", "reporting", "data analysis", "excel", "compliance", "teamwork", "communication", "problem solving", "attention to detail", "organizational skills", "data management", "hris configuration", "process improvement"]
+  },
+  {
+    "id": 24,
+    "job_title": "HR Generalist (Manufacturing)",
+    "description": "Manage recruitment, payroll, compliance, and employee onboarding for a manufacturing environment.",
+    "skills_required": ["recruitment", "payroll", "compliance", "employee relations", "hr policies and procedures", "interpersonal skills", "communication", "relationship building", "onboarding", "benefits administration"]
+  },
+  {
+    "id": 25,
+    "job_title": "HR Project Manager",
+    "description": "Lead complex HR projects, manage stakeholders, and drive change management initiatives.",
+    "skills_required": ["reporting", "communication", "stakeholder management", "relationship building", "problem solving", "teamwork", "leadership", "adaptability", "project management", "training and development", "change management", "risk management", "confidentiality"]
+  },
+  {
+    "id": 26,
+    "job_title": "HRIS Partner",
+    "description": "Configure HRIS systems, deliver business intelligence reporting, and provide technical HR data support.",
+    "skills_required": ["hris configuration", "data analysis", "process improvement", "communication", "teamwork", "problem solving", "mentoring", "hris", "business intelligence", "reporting"]
+  },
+  {
+    "id": 27,
+    "job_title": "HR Specialist",
+    "description": "Support HR administration, onboarding, policy development, and employee consulting services.",
+    "skills_required": ["hr policies and procedures", "onboarding", "policy development", "relationship building", "problem solving", "adaptability", "teamwork"]
+  },
+  {
+    "id": 28,
+    "job_title": "HR Generalist (Events & Entertainment)",
+    "description": "Provide HR generalist support including HRIS management, onboarding, training, and compliance.",
+    "skills_required": ["hris", "microsoft office", "data analysis", "project management", "onboarding", "training and development", "conflict resolution", "communication", "problem solving", "relationship building", "organizational skills", "critical thinking", "attention to detail", "employment law"]
+  },
+  {
+    "id": 29,
+    "job_title": "HR Coordinator",
+    "description": "Coordinate HR processes including workforce planning, hiring procedures, and HRIS data management.",
+    "skills_required": ["hris", "workforce planning", "excel", "microsoft powerpoint", "recruitment", "reporting", "data analysis", "communication", "teamwork", "adaptability"]
+  },
+  {
+    "id": 30,
+    "job_title": "Director of HR (Nonprofit)",
+    "description": "Lead human resources strategy, compliance, and employee development for a nonprofit organization.",
+    "skills_required": ["employee relations", "compliance", "microsoft office", "hris", "training and development", "policy development", "recruitment", "data analysis", "project management", "communication", "leadership", "organizational skills", "teamwork", "problem solving", "confidentiality", "adaptability", "mentoring", "interpersonal skills"]
+  },
+  {
+    "id": 31,
+    "job_title": "HR Generalist (Compliance Focus)",
+    "description": "Manage employee relations, payroll, benefits, and compliance reporting for an organization.",
+    "skills_required": ["employee relations", "training and development", "benefits administration", "payroll", "microsoft excel", "microsoft word", "reporting", "recruitment", "onboarding", "communication", "problem solving", "attention to detail", "interpersonal skills", "adaptability", "teamwork", "time management", "compliance", "hris"]
+  },
+  {
+    "id": 32,
+    "job_title": "HR Assistant",
+    "description": "Provide administrative HR support including employee records, onboarding coordination, and customer service.",
+    "skills_required": ["microsoft office", "organizational skills", "communication", "problem solving", "teamwork"]
+  },
+  {
+    "id": 33,
+    "job_title": "Junior HR Consultant",
+    "description": "Support HR consulting projects with data analysis, HRIS management, and reporting.",
+    "skills_required": ["microsoft word", "microsoft powerpoint", "microsoft excel", "hris", "excel", "communication", "attention to detail", "teamwork", "adaptability"]
+  },
+  {
+    "id": 34,
+    "job_title": "HR Business Partner",
+    "description": "Partner with business leaders on HR strategy, employee relations, and organizational design.",
+    "skills_required": ["industrial relations", "employee relations", "project management", "data analysis", "negotiation", "strategic hr planning", "mentoring", "communication", "relationship building", "problem solving", "teamwork", "strategic thinking", "leadership", "adaptability", "organizational development", "compliance"]
+  },
+  {
+    "id": 35,
+    "job_title": "HR Solutions Manager",
+    "description": "Drive HR transformation through project management, data analysis, and strategic change initiatives.",
+    "skills_required": ["project management", "data analysis", "employee engagement", "leadership", "teamwork", "communication", "problem solving", "strategic thinking", "time management", "adaptability", "process improvement", "agile", "change management", "risk management"]
+  },
+  {
+    "id": 36,
+    "job_title": "HR Generalist (Payroll & Benefits)",
+    "description": "Administer payroll, benefits, onboarding, and compliance documentation for the organization.",
+    "skills_required": ["payroll", "employment law", "benefits administration", "onboarding", "communication", "organizational skills", "teamwork", "confidentiality", "problem solving", "compliance", "reporting", "data management", "attention to detail"]
+  },
+  {
+    "id": 37,
+    "job_title": "HR Generalist (Talent Focus)",
+    "description": "Support talent acquisition, performance management, onboarding, and HRIS operations.",
+    "skills_required": ["hris", "employment law", "policy development", "performance management", "talent acquisition", "onboarding", "conflict resolution", "communication", "interpersonal skills", "problem solving", "organizational skills", "change management", "teamwork", "relationship building", "attention to detail", "training and development"]
   }
 ]

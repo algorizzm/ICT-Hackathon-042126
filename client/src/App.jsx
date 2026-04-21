@@ -71,37 +71,24 @@ export default function App() {
     return <AuthScreen onAuth={handleAuth} />;
   }
 
-  const userBar = (
-    <div className="user-bar">
-      <span>
-        Signed in as <span className="user-bar__name">{auth.user.name}</span>
-      </span>
-      <button type="button" className="user-bar__logout" onClick={handleLogout}>
-        Sign out
-      </button>
-    </div>
-  );
-
   if (results) {
     return (
-      <div className="app">
-        {userBar}
-        <Dashboard
-          results={results}
-          onAnalyzeAgain={() => { setResults(null); setError(null); }}
-        />
-      </div>
+      <Dashboard
+        results={results}
+        onAnalyzeAgain={() => { setResults(null); setError(null); }}
+        user={auth.user}
+        onLogout={handleLogout}
+      />
     );
   }
 
   return (
-    <div className="app">
-      {userBar}
-      <LandingPage
-        onAnalyze={handleAnalyze}
-        isLoading={isLoading}
-        error={error}
-      />
-    </div>
+    <LandingPage
+      onAnalyze={handleAnalyze}
+      isLoading={isLoading}
+      error={error}
+      user={auth.user}
+      onLogout={handleLogout}
+    />
   );
 }

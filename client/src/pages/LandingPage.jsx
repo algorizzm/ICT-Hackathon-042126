@@ -1,114 +1,107 @@
 import { useState } from 'react';
 import './LandingPage.css';
+import '../dashboard/Dashboard.css';
+import ResumeBuilder from '../dashboard/views/ResumeBuilder';
 
 /* ── INLINE SVG ICONS ─────────────────────────────────────── */
-const LogoIcon = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-    <path d="M2 17l10 5 10-5"/>
-    <path d="M2 12l10 5 10-5"/>
-  </svg>
-);
-
 const SearchIcon = () => (
   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+    <circle cx="11" cy="11" r="8" /><path d="m21 21-4.35-4.35" />
   </svg>
 );
 
 const BellIcon = () => (
   <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
-    <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+    <path d="M13.73 21a2 2 0 0 1-3.46 0" />
   </svg>
 );
 
 const SettingsIcon = () => (
   <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="12" cy="12" r="3"/>
-    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+    <circle cx="12" cy="12" r="3" />
+    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
   </svg>
 );
 
 const ArrowRightIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+    <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
   </svg>
 );
 
 const TrendIcon = () => (
   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
-    <polyline points="16 7 22 7 22 13"/>
+    <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+    <polyline points="16 7 22 7 22 13" />
   </svg>
 );
 
 const ExtractionIcon = () => (
   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="12" cy="12" r="3"/>
-    <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+    <circle cx="12" cy="12" r="3" />
+    <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" />
   </svg>
 );
 
 const UploadIcon = () => (
   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-    <polyline points="17 8 12 3 7 8"/>
-    <line x1="12" y1="3" x2="12" y2="15"/>
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+    <polyline points="17 8 12 3 7 8" />
+    <line x1="12" y1="3" x2="12" y2="15" />
   </svg>
 );
 
 const CodeIcon = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <polyline points="16 18 22 12 16 6"/>
-    <polyline points="8 6 2 12 8 18"/>
+    <polyline points="16 18 22 12 16 6" />
+    <polyline points="8 6 2 12 8 18" />
   </svg>
 );
 
 const LensIcon = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
-    <path d="M11 8v6M8 11h6"/>
+    <circle cx="11" cy="11" r="8" /><path d="m21 21-4.35-4.35" />
+    <path d="M11 8v6M8 11h6" />
   </svg>
 );
 
 const NetworkIcon = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="12" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/>
-    <path d="M12 7v4M5 17l5-4M19 17l-5-4"/>
+    <circle cx="12" cy="5" r="2" /><circle cx="5" cy="19" r="2" /><circle cx="19" cy="19" r="2" />
+    <path d="M12 7v4M5 17l5-4M19 17l-5-4" />
   </svg>
 );
 
 const TargetIcon = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+    <circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" />
   </svg>
 );
 
 const SendIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-    <line x1="22" y1="2" x2="11" y2="13"/>
-    <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+    <line x1="22" y1="2" x2="11" y2="13" />
+    <polygon points="22 2 15 22 11 13 2 9 22 2" />
   </svg>
 );
 
 /* ── NAVBAR ───────────────────────────────────────────────── */
-function NavBar({ onLogoClick }) {
+function NavBar({ onLogoClick, user, onLogout }) {
   return (
     <nav className="lp-nav">
       <div className="lp-nav__inner">
         <button className="lp-nav__brand" onClick={onLogoClick} style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
-          <div className="lp-nav__logo">
-            <LogoIcon />
+          <div className="lp-nav__logo-wrap">
+            <img src="/aptitude_logo.png" alt="Aptitude" className="lp-nav__logo-img" />
           </div>
-          <span className="lp-nav__name">Aptitude</span>
         </button>
 
         <div className="lp-nav__links">
-          <a href="#" className="lp-nav__link">Dashboard</a>
-          <a href="#" className="lp-nav__link">Job Matches</a>
-          <a href="#" className="lp-nav__link">Skill Gaps</a>
-          <a href="#" className="lp-nav__link">Resources</a>
+          <a href="#" className="lp-nav__link" onClick={e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>Home</a>
+          <a href="#resume-input" className="lp-nav__link" onClick={e => { e.preventDefault(); document.getElementById('resume-input')?.scrollIntoView({ behavior: 'smooth' }); }}>Analyze</a>
+          <a href="#resume-builder" className="lp-nav__link" onClick={e => { e.preventDefault(); document.getElementById('resume-builder')?.scrollIntoView({ behavior: 'smooth' }); }}>Resume Builder</a>
+          <a href="#" className="lp-nav__link">About</a>
         </div>
 
         <div className="lp-nav__actions">
@@ -118,7 +111,15 @@ function NavBar({ onLogoClick }) {
           </div>
           <button className="lp-nav__icon-btn" aria-label="Notifications"><BellIcon /></button>
           <button className="lp-nav__icon-btn" aria-label="Settings"><SettingsIcon /></button>
-          <div className="lp-nav__avatar" aria-label="User profile">K</div>
+          <div
+            className="lp-nav__avatar"
+            aria-label="User profile"
+            onClick={onLogout}
+            title="Sign out"
+            style={{ cursor: 'pointer' }}
+          >
+            {user ? user.name.charAt(0).toUpperCase() : 'U'}
+          </div>
         </div>
       </div>
     </nav>
@@ -224,16 +225,59 @@ function HeroSection({ onAnalyzeClick }) {
 /* ── RESUME INPUT SECTION ────────────────────────────────── */
 function ResumeSection({ resumeText, setResumeText, onAnalyze, isLoading, error }) {
   const [dragOver, setDragOver] = useState(false);
+  const [isExtracting, setIsExtracting] = useState(false);
+  const [extractError, setExtractError] = useState(null);
+
+  const handleFileProcess = async (file) => {
+    if (!file) return;
+
+    if (file.type === 'text/plain') {
+      const reader = new FileReader();
+      reader.onload = (ev) => {
+        const text = ev.target.result;
+        setResumeText(text);
+        if (text.trim()) {
+          onAnalyze(text.trim());
+        }
+      };
+      reader.readAsText(file);
+      return;
+    }
+
+    setIsExtracting(true);
+    setExtractError(null);
+    try {
+      const formData = new FormData();
+      formData.append('resume', file);
+
+      const res = await fetch('http://localhost:5000/api/extract', {
+        method: 'POST',
+        body: formData
+      });
+
+      if (!res.ok) {
+        const errData = await res.json().catch(() => ({}));
+        throw new Error(errData.error || 'Server error during extraction');
+      }
+
+      const data = await res.json();
+      if (!data.extractedText || data.extractedText.trim() === '') {
+        throw new Error('No readable text found in file.');
+      }
+      setResumeText(data.extractedText);
+      // Automatically trigger the scan!
+      onAnalyze(data.extractedText.trim());
+    } catch (err) {
+      setExtractError(err.message || 'Failed to extract text from file.');
+    } finally {
+      setIsExtracting(false);
+    }
+  };
 
   const handleDrop = (e) => {
     e.preventDefault();
     setDragOver(false);
-    const file = e.dataTransfer.files[0];
-    if (file && file.type === 'text/plain') {
-      const reader = new FileReader();
-      reader.onload = (ev) => setResumeText(ev.target.result);
-      reader.readAsText(file);
-    }
+    handleFileProcess(e.dataTransfer.files[0]);
   };
 
   return (
@@ -266,17 +310,28 @@ function ResumeSection({ resumeText, setResumeText, onAnalyze, isLoading, error 
               <span className="lp-resume__col-title">Upload File</span>
               <span className="lp-resume__col-tag">PDF / DOCX</span>
             </div>
-            <div
+            <label
               className={`lp-dropzone${dragOver ? ' lp-dropzone--over' : ''}`}
               onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}
               onDragLeave={() => setDragOver(false)}
               onDrop={handleDrop}
-              role="button"
-              aria-label="File upload area"
-              tabIndex={0}
             >
-              <div className="lp-dropzone__icon"><UploadIcon /></div>
-              <div className="lp-dropzone__title">Drag &amp; Drop Resume</div>
+              <input
+                type="file"
+                accept=".txt,.pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                onChange={(e) => handleFileProcess(e.target.files[0])}
+                style={{ display: 'none' }}
+              />
+              <div className="lp-dropzone__icon">
+                {isExtracting ? (
+                  <span className="lp-btn__spinner" style={{ borderColor: 'rgba(30, 58, 138, 0.3)', borderTopColor: 'var(--primary)', width: 28, height: 28 }} />
+                ) : (
+                  <UploadIcon />
+                )}
+              </div>
+              <div className="lp-dropzone__title">
+                {isExtracting ? 'Extracting text...' : 'Click or Drag & Drop'}
+              </div>
               <div className="lp-dropzone__subtitle">
                 Support for PDF, Word, and RTF formats up to 10MB.
               </div>
@@ -284,11 +339,19 @@ function ResumeSection({ resumeText, setResumeText, onAnalyze, isLoading, error 
                 <span className="lp-dropzone__tag">Privacy Guaranteed</span>
                 <span className="lp-dropzone__tag">No Login Required</span>
               </div>
-            </div>
+            </label>
             <p style={{ marginTop: '10px', fontSize: '0.76rem', color: 'var(--ink-3)', textAlign: 'center' }}>
               By uploading, you agree to our Career Privacy Protocol. Your data is processed
               in a secure environment and never stored on public servers.
             </p>
+            {extractError && (
+              <div className="lp-error">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                  <circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" />
+                </svg>
+                {extractError}
+              </div>
+            )}
           </div>
         </div>
 
@@ -301,13 +364,13 @@ function ResumeSection({ resumeText, setResumeText, onAnalyze, isLoading, error 
             {isLoading && <span className="lp-btn__spinner" />}
             Analyze Resume &rarr;
           </button>
-          <span className="lp-resume__note">Takes approx. 3 seconds</span>
+          {/* <span className="lp-resume__note">Takes approx. 3 seconds</span> */}
         </div>
 
         {error && (
           <div className="lp-error">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+              <circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" />
             </svg>
             {error}
           </div>
@@ -366,8 +429,9 @@ function FooterSection() {
           {/* Brand */}
           <div>
             <div className="lp-footer__brand">
-              <div className="lp-footer__logo"><LogoIcon /></div>
-              <span className="lp-footer__name">Aptitude</span>
+              <div className="lp-footer__logo-wrap">
+                <img src="/aptitude_logo.png" alt="Aptitude" className="lp-footer__logo-img" />
+              </div>
             </div>
             <p className="lp-footer__desc">
               The premium executive suite for modern career intelligence. Built for
@@ -428,8 +492,33 @@ function FooterSection() {
   );
 }
 
+/* ── RESUME BUILDER SECTION ──────────────────────────────── */
+function ResumeBuilderSection() {
+  return (
+    <section className="lp-rb-wrap" id="resume-builder">
+      <div className="lp-rb-wrap__inner">
+        <div className="lp-rb-wrap__header">
+          <div className="lp-badge">
+            <span className="lp-badge__dot" />
+            Gemini AI Powered
+          </div>
+          <h2 className="lp-rb-wrap__title">Build Your Resume</h2>
+          <p className="lp-rb-wrap__sub">
+            Craft a professional resume with AI-generated summaries and enhanced bullet points.
+            Analyze your resume above to auto-fill your skills.
+          </p>
+        </div>
+        {/* .dashboard scopes the CSS variables needed by ResumeBuilder */}
+        <div className="dashboard lp-rb-wrap__scope">
+          <ResumeBuilder results={null} />
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ── MAIN EXPORT ─────────────────────────────────────────── */
-export default function LandingPage({ onAnalyze, isLoading, error }) {
+export default function LandingPage({ onAnalyze, isLoading, error, user, onLogout }) {
   const [resumeText, setResumeText] = useState('');
 
   const scrollToInput = () => {
@@ -438,7 +527,7 @@ export default function LandingPage({ onAnalyze, isLoading, error }) {
 
   return (
     <div className="lp">
-      <NavBar onLogoClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} />
+      <NavBar onLogoClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} user={user} onLogout={onLogout} />
       <HeroSection onAnalyzeClick={scrollToInput} />
       <ResumeSection
         resumeText={resumeText}
@@ -448,6 +537,7 @@ export default function LandingPage({ onAnalyze, isLoading, error }) {
         error={error}
       />
       <FeaturesSection />
+      <ResumeBuilderSection />
       <FooterSection />
     </div>
   );

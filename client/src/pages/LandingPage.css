@@ -119,26 +119,26 @@
   margin-right: 8px;
 }
 
-.lp-nav__logo {
-  width: 32px; height: 32px;
-  border-radius: var(--r-sm);
+.lp-nav__logo-wrap {
   background: var(--g-primary);
+  border-radius: var(--r-sm);
+  padding: 5px 10px;
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(30,58,138,0.28);
 }
 
-.lp-nav__name {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 1rem;
-  color: var(--ink);
-  white-space: nowrap;
+.lp-nav__logo-img {
+  height: 26px;
+  width: auto;
+  display: block;
 }
 
 .lp-nav__links {
   display: flex;
   align-items: center;
-  gap: 2px;
+  justify-content: center;
+  gap: 12px;
   flex: 1;
 }
 
@@ -735,6 +735,58 @@
   line-height: 1.7;
 }
 
+/* ── RESUME BUILDER SECTION ─────────────────────────────────── */
+.lp-rb-wrap {
+  background: var(--s-low);
+  padding: 80px 32px 96px;
+}
+
+.lp-rb-wrap__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.lp-rb-wrap__header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.lp-rb-wrap__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 900;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  margin: 14px 0 10px;
+}
+
+.lp-rb-wrap__sub {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  max-width: 540px;
+  margin: 0 auto;
+  line-height: 1.65;
+}
+
+/* Override the full-page flex layout that .dashboard normally applies */
+.lp-rb-wrap__scope {
+  display: block !important;
+  min-height: auto !important;
+  overflow: visible !important;
+  background: transparent !important;
+  height: auto !important;
+}
+
+/* Remove the extra padding db-resume-builder adds — section handles spacing */
+.lp-rb-wrap .db-resume-builder {
+  padding: 0;
+}
+
+@media (max-width: 768px) {
+  .lp-rb-wrap { padding: 48px 16px 64px; }
+  .lp-rb-wrap__header { margin-bottom: 32px; }
+}
+
 /* ── FOOTER ──────────────────────────────────────────────────── */
 .lp-footer {
   background: var(--s-low);
@@ -761,19 +813,19 @@
   margin-bottom: 12px;
 }
 
-.lp-footer__logo {
-  width: 28px; height: 28px;
-  border-radius: 6px;
+.lp-footer__logo-wrap {
   background: var(--g-primary);
-  display: flex; align-items: center; justify-content: center;
+  border-radius: var(--r-sm);
+  padding: 5px 10px;
+  display: inline-flex; align-items: center; justify-content: center;
   flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(30,58,138,0.22);
 }
 
-.lp-footer__name {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 0.95rem;
-  color: var(--ink);
+.lp-footer__logo-img {
+  height: 24px;
+  width: auto;
+  display: block;
 }
 
 .lp-footer__desc {
