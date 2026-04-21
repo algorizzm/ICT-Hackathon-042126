@@ -57,6 +57,13 @@ const LogoIcon = () => (
     <path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
   </svg>
 );
+const LogoutIcon = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+    <polyline points="16 17 21 12 16 7"/>
+    <line x1="21" y1="12" x2="9" y2="12"/>
+  </svg>
+);
 
 const NAV = [
   { id: 'overview',       label: 'Overview',        Icon: GridIcon  },
@@ -80,11 +87,15 @@ const CloseIcon = () => (
 );
 
 /* ── SIDEBAR ──────────────────────────────────────────────── */
-function Sidebar({ active, onNav, onAnalyzeAgain, isOpen, onClose }) {
+function Sidebar({ active, onNav, onAnalyzeAgain, isOpen, onClose, user, onLogout }) {
   const handleNav = (id) => {
     onNav(id);
     onClose();
   };
+
+  const initials = user?.name
+    ? user.name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase()
+    : '?';
 
   return (
     <>
@@ -95,7 +106,7 @@ function Sidebar({ active, onNav, onAnalyzeAgain, isOpen, onClose }) {
         <div className="db-sidebar__brand">
           <div className="db-sidebar__logo"><LogoIcon /></div>
           <div className="db-sidebar__brand-text">
-            <div className="db-sidebar__brand-name">The Curator</div>
+            <div className="db-sidebar__brand-name">Aptitude</div>
             <div className="db-sidebar__brand-sub">Career Intelligence</div>
           </div>
           <button className="db-sidebar__close" onClick={onClose} aria-label="Close menu">
@@ -122,13 +133,27 @@ function Sidebar({ active, onNav, onAnalyzeAgain, isOpen, onClose }) {
             Analyze Resume
           </button>
         </div>
+
+        {/* User footer */}
+        {user && (
+          <div className="db-sidebar__user">
+            <div className="db-sidebar__user-avatar">{initials}</div>
+            <div className="db-sidebar__user-info">
+              <div className="db-sidebar__user-name">{user.name || user.email}</div>
+              <div className="db-sidebar__user-email">{user.email}</div>
+            </div>
+            <button className="db-sidebar__logout" onClick={onLogout} aria-label="Log out" title="Log out">
+              <LogoutIcon />
+            </button>
+          </div>
+        )}
       </aside>
     </>
   );
 }
 
 /* ── DASHBOARD ────────────────────────────────────────────── */
-export default function Dashboard({ results, onAnalyzeAgain }) {
+export default function Dashboard({ results, onAnalyzeAgain, user, onLogout }) {
   const [view,          setView]   = useState('overview');
   const [activeJob,     setJob]    = useState(null);
   const [sidebarOpen,   setSidebar] = useState(false);
@@ -167,6 +192,8 @@ export default function Dashboard({ results, onAnalyzeAgain }) {
         onAnalyzeAgain={onAnalyzeAgain}
         isOpen={sidebarOpen}
         onClose={() => setSidebar(false)}
+        user={user}
+        onLogout={onLogout}
       />
       <main className="db-main">
         {/* Mobile top bar */}
@@ -180,7 +207,7 @@ export default function Dashboard({ results, onAnalyzeAgain }) {
           </button>
           <div className="db-mobile-bar__brand">
             <div className="db-sidebar__logo"><LogoIcon /></div>
-            <span style={{fontFamily:'Manrope,sans-serif',fontWeight:800,fontSize:'0.88rem',color:'var(--ink)'}}>The Curator</span>
+            <span style={{fontFamily:'Manrope,sans-serif',fontWeight:800,fontSize:'0.88rem',color:'var(--ink)'}}>Aptitude</span>
           </div>
         </div>
         {renderView()}
