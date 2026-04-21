@@ -32,6 +32,12 @@ const TargetIcon = () => (
     <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
   </svg>
 );
+const BookIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+  </svg>
+);
 const DocIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
@@ -53,52 +59,79 @@ const LogoIcon = () => (
 );
 
 const NAV = [
-  { id: 'overview',       label: 'Overview',        Icon: GridIcon },
-  { id: 'career-path',    label: 'Career Path',     Icon: MapIcon  },
+  { id: 'overview',       label: 'Overview',        Icon: GridIcon  },
+  { id: 'career-path',    label: 'Career Path',     Icon: MapIcon   },
   { id: 'skill-lab',      label: 'Skill Lab',       Icon: FlaskIcon },
+  { id: 'resources',      label: 'Resources',       Icon: BookIcon  },
   { id: 'match-engine',   label: 'Match Engine',    Icon: TargetIcon },
-  { id: 'resume-builder', label: 'Resume Builder',  Icon: DocIcon  },
-  { id: 'settings',       label: 'Settings',        Icon: GearIcon },
+  { id: 'resume-builder', label: 'Resume Builder',  Icon: DocIcon   },
+  { id: 'settings',       label: 'Settings',        Icon: GearIcon  },
 ];
 
+const HamburgerIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+  </svg>
+);
+const CloseIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+  </svg>
+);
+
 /* ── SIDEBAR ──────────────────────────────────────────────── */
-function Sidebar({ active, onNav, onAnalyzeAgain }) {
+function Sidebar({ active, onNav, onAnalyzeAgain, isOpen, onClose }) {
+  const handleNav = (id) => {
+    onNav(id);
+    onClose();
+  };
+
   return (
-    <aside className="db-sidebar">
-      <div className="db-sidebar__brand">
-        <div className="db-sidebar__logo"><LogoIcon /></div>
-        <div className="db-sidebar__brand-text">
-          <div className="db-sidebar__brand-name">The Curator</div>
-          <div className="db-sidebar__brand-sub">Career Intelligence</div>
-        </div>
-      </div>
+    <>
+      {/* Mobile backdrop */}
+      {isOpen && <div className="db-sidebar-backdrop" onClick={onClose} />}
 
-      <nav className="db-nav">
-        {NAV.map(({ id, label, Icon }) => (
-          <button
-            key={id}
-            className={`db-nav__item${active === id ? ' db-nav__item--active' : ''}`}
-            onClick={() => onNav(id)}
-          >
-            <span className="db-nav__icon"><Icon /></span>
-            {label}
+      <aside className={`db-sidebar${isOpen ? ' db-sidebar--open' : ''}`}>
+        <div className="db-sidebar__brand">
+          <div className="db-sidebar__logo"><LogoIcon /></div>
+          <div className="db-sidebar__brand-text">
+            <div className="db-sidebar__brand-name">The Curator</div>
+            <div className="db-sidebar__brand-sub">Career Intelligence</div>
+          </div>
+          <button className="db-sidebar__close" onClick={onClose} aria-label="Close menu">
+            <CloseIcon />
           </button>
-        ))}
-      </nav>
+        </div>
 
-      <div className="db-sidebar__cta">
-        <button className="db-sidebar__cta-btn" onClick={onAnalyzeAgain}>
-          Analyze Resume
-        </button>
-      </div>
-    </aside>
+        <nav className="db-nav" role="navigation" aria-label="Dashboard navigation">
+          {NAV.map(({ id, label, Icon }) => (
+            <button
+              key={id}
+              className={`db-nav__item${active === id ? ' db-nav__item--active' : ''}`}
+              onClick={() => handleNav(id)}
+              aria-current={active === id ? 'page' : undefined}
+            >
+              <span className="db-nav__icon"><Icon /></span>
+              {label}
+            </button>
+          ))}
+        </nav>
+
+        <div className="db-sidebar__cta">
+          <button className="db-sidebar__cta-btn" onClick={onAnalyzeAgain}>
+            Analyze Resume
+          </button>
+        </div>
+      </aside>
+    </>
   );
 }
 
 /* ── DASHBOARD ────────────────────────────────────────────── */
 export default function Dashboard({ results, onAnalyzeAgain }) {
-  const [view, setView]       = useState('overview');
-  const [activeJob, setJob]   = useState(null);
+  const [view,          setView]   = useState('overview');
+  const [activeJob,     setJob]    = useState(null);
+  const [sidebarOpen,   setSidebar] = useState(false);
 
   const handleJobSelect = (job) => {
     setJob(job);
@@ -120,7 +153,7 @@ export default function Dashboard({ results, onAnalyzeAgain }) {
       case 'resume-builder':
         return <ResumeBuilder results={results} />;
       case 'settings':
-        return <Settings />;
+        return <Settings results={results} />;
       default:
         return <Overview results={results} onJobSelect={handleJobSelect} />;
     }
@@ -128,8 +161,30 @@ export default function Dashboard({ results, onAnalyzeAgain }) {
 
   return (
     <div className="dashboard">
-      <Sidebar active={view} onNav={setView} onAnalyzeAgain={onAnalyzeAgain} />
-      <main className="db-main">{renderView()}</main>
+      <Sidebar
+        active={view}
+        onNav={setView}
+        onAnalyzeAgain={onAnalyzeAgain}
+        isOpen={sidebarOpen}
+        onClose={() => setSidebar(false)}
+      />
+      <main className="db-main">
+        {/* Mobile top bar */}
+        <div className="db-mobile-bar">
+          <button
+            className="db-mobile-bar__menu"
+            onClick={() => setSidebar(true)}
+            aria-label="Open navigation menu"
+          >
+            <HamburgerIcon />
+          </button>
+          <div className="db-mobile-bar__brand">
+            <div className="db-sidebar__logo"><LogoIcon /></div>
+            <span style={{fontFamily:'Manrope,sans-serif',fontWeight:800,fontSize:'0.88rem',color:'var(--ink)'}}>The Curator</span>
+          </div>
+        </div>
+        {renderView()}
+      </main>
     </div>
   );
 }

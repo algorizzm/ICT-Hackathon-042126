@@ -45,3 +45,4 @@ export default function JobCard({ job, rank }) {
     </div>
   );
 }
+

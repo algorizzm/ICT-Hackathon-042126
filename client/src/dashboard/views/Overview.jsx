@@ -23,7 +23,7 @@ function RadialProgress({ score, size = 72 }) {
             <stop offset="100%" stopColor={color} stopOpacity="0.6" />
           </linearGradient>
         </defs>
-        <circle cx={size/2} cy={size/2} r={r} fill="none" stroke="rgba(255,255,255,0.06)" strokeWidth="5" />
+        <circle cx={size/2} cy={size/2} r={r} fill="none" stroke="rgba(19,27,46,0.08)" strokeWidth="5" />
         <circle cx={size/2} cy={size/2} r={r} fill="none"
           stroke={`url(#rg-${score})`} strokeWidth="5" strokeLinecap="round"
           strokeDasharray={circ} strokeDashoffset={off}
@@ -126,9 +126,9 @@ export default function Overview({ results, onJobSelect }) {
               <span className="db-badge db-badge--live"><span className="db-badge__dot" />Live</span>
             </div>
             <p className="db-coaching__body">
-              Based on your career arc, transitioning to a <strong style={{color:'#4ade80'}}>{topJob?.job_title || 'Senior Analyst'}</strong> role
+              Based on your career arc, transitioning to a <strong style={{color:'rgba(255,255,255,0.95)'}}>{topJob?.job_title || 'Senior Analyst'}</strong> role
               would represent a strong upward move. The engine suggests focusing on{' '}
-              <em style={{color:'#7ab8ae'}}>{topJob?.missingSkills?.slice(0,2).join(' & ') || 'data visualization'}</em> to
+              <em style={{color:'rgba(255,255,255,0.8)'}}>{topJob?.missingSkills?.slice(0,2).join(' & ') || 'data visualization'}</em> to
               close your current skill gap.
             </p>
             <div className="db-coaching__stats">

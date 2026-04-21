@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 /* Settings */
 const SETTING_CARDS = [
   {
@@ -47,8 +49,6 @@ const TOGGLES = [
   { id:'competitors',  label:'Competitor Tracking',  desc:'Monitor similar profiles in your area', on:false },
 ];
 
-import { useState } from 'react';
-
 function Toggle({ on, onChange }) {
   return (
     <button
@@ -68,12 +68,21 @@ function Toggle({ on, onChange }) {
   );
 }
 
-export default function Settings() {
+export default function Settings({ results }) {
   const [toggles, setToggles] = useState(
     Object.fromEntries(TOGGLES.map(t => [t.id, t.on]))
   );
 
   const flip = (id) => setToggles(s => ({...s, [id]: !s[id]}));
+
+  // Derive real data from results when available
+  const topJob      = results?.results?.[0];
+  const skillCount  = results?.extractedSkills?.length ?? 0;
+  const jobCount    = results?.totalJobsMatched ?? 0;
+  const topScore    = topJob ? Math.round(topJob.matchScore) : null;
+  const hireLabel   = topScore >= 70 ? 'High' : topScore >= 40 ? 'Medium' : 'Developing';
+  const hireColor   = topScore >= 70 ? 'var(--green)' : topScore >= 40 ? 'var(--amber)' : 'var(--ink-3)';
+  const avatarLetter = 'U';
 
   return (
     <div className="db-settings db-animate">
@@ -82,36 +91,38 @@ export default function Settings() {
 
       {/* Profile card */}
       <div className="db-profile-card">
-        <div className="db-profile-avatar">A</div>
+        <div className="db-profile-avatar">{avatarLetter}</div>
         <div style={{flex:1}}>
           <div style={{display:'flex',alignItems:'flex-start',justifyContent:'space-between',flexWrap:'wrap',gap:10}}>
             <div>
-              <div className="db-profile-name">Alexander Sterling</div>
-              <div className="db-profile-role">Strategic Operations & Digital Transformation Leader</div>
+              <div className="db-profile-name">Your Profile</div>
+              <div className="db-profile-role">{topJob?.job_title || 'Career Intelligence User'}</div>
               <div className="db-profile-tags">
                 <span className="db-chip db-chip--purple" style={{fontSize:'0.7rem'}}>Job Match AI</span>
-                <span className="db-chip db-chip--skill"  style={{fontSize:'0.7rem'}}>Executive</span>
+                <span className="db-chip db-chip--skill"  style={{fontSize:'0.7rem'}}>{skillCount} Skills</span>
               </div>
             </div>
             <div style={{textAlign:'right'}}>
               <div style={{fontSize:'0.68rem',color:'var(--text-3)',textTransform:'uppercase',letterSpacing:'0.6px'}}>Market Insights</div>
-              <div style={{fontFamily:'Manrope,sans-serif',fontWeight:800,color:'var(--cyan)',marginTop:2}}>Active</div>
+              <div style={{fontFamily:'Manrope,sans-serif',fontWeight:800,color:'var(--primary)',marginTop:2}}>Active</div>
             </div>
           </div>
           <p className="db-profile-bio">
-            Dedicated technology executive with 5+ years of experience managing cross-functional teams and delivering complex, high-impact projects. Successful in driving market-ready digital products and strategies. Looking to join the Senior C-suite.
+            Your resume has been analyzed by Curator AI. {skillCount} skills identified, {jobCount} job matches found.
+            {topJob && ` Top match: ${topJob.job_title} at ${topScore}% readiness.`}
           </p>
           <div style={{marginTop:12,display:'flex',gap:8,flexWrap:'wrap'}}>
-            <div style={{padding:'6px 12px',background:'rgba(255,255,255,0.04)',border:'1px solid var(--border)',borderRadius:'var(--r-md)'}}>
-              <div style={{fontSize:'0.65rem',color:'var(--text-3)',textTransform:'uppercase',letterSpacing:'0.6px'}}>Technology & FinServ</div>
+            <div style={{padding:'6px 12px',background:'var(--bg-low)',borderRadius:'var(--r-md)'}}>
+              <div style={{fontSize:'0.65rem',color:'var(--text-3)',textTransform:'uppercase',letterSpacing:'0.6px'}}>Skills Found</div>
+              <div style={{fontFamily:'Manrope,sans-serif',fontWeight:700,color:'var(--text)',fontSize:'0.82rem'}}>{skillCount}</div>
             </div>
-            <div style={{padding:'6px 12px',background:'rgba(255,255,255,0.04)',border:'1px solid var(--border)',borderRadius:'var(--r-md)'}}>
-              <div style={{fontSize:'0.65rem',color:'var(--text-3)',textTransform:'uppercase',letterSpacing:'0.6px'}}>Resume Views</div>
-              <div style={{fontFamily:'Manrope,sans-serif',fontWeight:700,color:'var(--text)',fontSize:'0.82rem'}}>128k+</div>
+            <div style={{padding:'6px 12px',background:'var(--bg-low)',borderRadius:'var(--r-md)'}}>
+              <div style={{fontSize:'0.65rem',color:'var(--text-3)',textTransform:'uppercase',letterSpacing:'0.6px'}}>Job Matches</div>
+              <div style={{fontFamily:'Manrope,sans-serif',fontWeight:700,color:'var(--text)',fontSize:'0.82rem'}}>{jobCount}</div>
             </div>
-            <div style={{padding:'6px 12px',background:'rgba(255,255,255,0.04)',border:'1px solid var(--border)',borderRadius:'var(--r-md)'}}>
+            <div style={{padding:'6px 12px',background:'var(--bg-low)',borderRadius:'var(--r-md)'}}>
               <div style={{fontSize:'0.65rem',color:'var(--text-3)',textTransform:'uppercase',letterSpacing:'0.6px'}}>Hire Probability</div>
-              <div style={{fontFamily:'Manrope,sans-serif',fontWeight:700,color:'#4ade80',fontSize:'0.82rem'}}>High</div>
+              <div style={{fontFamily:'Manrope,sans-serif',fontWeight:700,color:hireColor,fontSize:'0.82rem'}}>{hireLabel}</div>
             </div>
           </div>
         </div>

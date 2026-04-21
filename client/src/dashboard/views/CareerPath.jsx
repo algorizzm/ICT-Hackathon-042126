@@ -109,7 +109,7 @@ export default function CareerPath({ results }) {
               <div className="db-path-card__meta">
                 <div>
                   <div className="db-path-card__stat-label">Growth</div>
-                  <div className="db-path-card__stat-val" style={{color:'#4ade80'}}>{path.growth} {path.period}</div>
+                  <div className="db-path-card__stat-val" style={{color:'var(--green)'}}>{path.growth} {path.period}</div>
                 </div>
                 <div>
                   <div className="db-path-card__stat-label">Demand</div>
@@ -139,7 +139,7 @@ export default function CareerPath({ results }) {
               </div>
 
               {/* AI rec */}
-              <div style={{marginTop:12,padding:'10px 12px',background:'rgba(139,92,246,0.07)',border:'1px solid rgba(139,92,246,0.15)',borderRadius:'10px'}}>
+              <div style={{marginTop:12,padding:'10px 12px',background:'rgba(139,92,246,0.07)',borderRadius:'10px'}}>
                 <div style={{fontSize:'0.65rem',fontWeight:700,color:'var(--purple)',textTransform:'uppercase',letterSpacing:'0.7px',marginBottom:4}}>
                   Curator AI Recommendation
                 </div>

@@ -14,7 +14,7 @@ function GoalRing({ pct }) {
             <stop offset="100%" stopColor="#8b5cf6"/>
           </linearGradient>
         </defs>
-        <circle cx="50" cy="50" r={r} fill="none" stroke="rgba(255,255,255,0.06)" strokeWidth="7"/>
+        <circle cx="50" cy="50" r={r} fill="none" stroke="rgba(19,27,46,0.08)" strokeWidth="7"/>
         <circle cx="50" cy="50" r={r} fill="none" stroke="url(#goalg)" strokeWidth="7" strokeLinecap="round"
           strokeDasharray={circ} strokeDashoffset={off}
           style={{transition:'stroke-dashoffset 1.2s cubic-bezier(0.4,0,0.2,1)'}}

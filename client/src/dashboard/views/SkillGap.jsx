@@ -14,7 +14,7 @@ function RadialBig({ score }) {
             <stop offset="100%" stopColor="#8b5cf6" />
           </linearGradient>
         </defs>
-        <circle cx={size/2} cy={size/2} r={r} fill="none" stroke="rgba(255,255,255,0.06)" strokeWidth="7" />
+        <circle cx={size/2} cy={size/2} r={r} fill="none" stroke="rgba(19,27,46,0.08)" strokeWidth="7" />
         <circle cx={size/2} cy={size/2} r={r} fill="none"
           stroke="url(#rbig)" strokeWidth="7" strokeLinecap="round"
           strokeDasharray={circ} strokeDashoffset={off}
@@ -199,17 +199,17 @@ export default function SkillGap({ job, results }) {
           </div>
 
           {/* Salary benchmark */}
-          <div className="db-card" style={{background:'linear-gradient(135deg,#070d1d,#0a1628)',border:'1px solid rgba(9,196,224,0.15)'}}>
-            <div style={{fontSize:'0.68rem',fontWeight:700,letterSpacing:'0.8px',textTransform:'uppercase',color:'var(--text-3)',marginBottom:8}}>
+          <div className="db-card" style={{background:'linear-gradient(135deg,#00236f,#1e3a8a)'}}>
+            <div style={{fontSize:'0.68rem',fontWeight:700,letterSpacing:'0.8px',textTransform:'uppercase',color:'rgba(255,255,255,0.55)',marginBottom:8}}>
               FinTech Salary Benchmark
             </div>
-            <div style={{fontFamily:'Manrope, sans-serif',fontSize:'1.2rem',fontWeight:800,color:'var(--text)',marginBottom:4}}>
+            <div style={{fontFamily:'Manrope, sans-serif',fontSize:'1.2rem',fontWeight:800,color:'white',marginBottom:4}}>
               Report 2026
             </div>
-            <div style={{fontSize:'0.78rem',color:'var(--text-2)',lineHeight:1.55,marginBottom:12}}>
+            <div style={{fontSize:'0.78rem',color:'rgba(255,255,255,0.7)',lineHeight:1.55,marginBottom:12}}>
               Comprehensive salary intelligence across 500+ data roles in the FinTech sector.
             </div>
-            <button className="db-btn db-btn--ghost db-btn--sm">
+            <button className="db-btn db-btn--ghost db-btn--sm" style={{borderColor:'rgba(255,255,255,0.3)',color:'white'}}>
               Download PDF &rarr;
             </button>
           </div>
